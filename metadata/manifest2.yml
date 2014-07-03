@@ -1,8 +1,8 @@
 ---
-Name: mongodb-primary
+Name: mongodb-secondary-2
 Cartridge-Short-Name: MONGODB
 Architecture: noarch
-Display-Name: MongoDB Primary 2.4
+Display-Name: MongoDB 2.4 Secondary 2
 Description: MongoDB is a scalable, high-performance, open source NoSQL database.
 Version: '2.4'
 Versions:
