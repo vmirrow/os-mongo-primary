@@ -1,11 +1,11 @@
 ---
-Name: mongodb-primary
+Name: mongodbprimary
 Cartridge-Short-Name: MONGODB
 Architecture: noarch
-Display-Name: MongoDB Primary 2.4
+Display-Name: MongoDB 2.4
 Description: MongoDB is a scalable, high-performance, open source NoSQL database.
 Version: '2.4'
-Source-Url: https://github.com/vmirrow/os-mongo-primary.git
+Source-Url: https://github.com/vmirrow/os-mongo-primary.git 
 Versions:
 - '2.4'
 Cartridge-Version: 0.2.11
@@ -47,6 +47,8 @@ Provides:
 Publishes:
   publish-nosql-db-connection-info:
     Type: ENV:NET_TCP:nosqldb:connection-info
+  publish-ld-library-path-info:
+    Type: ENV:NET_TCP:db:ld-library-path-info
 Scaling:
   Min: 1
   Max: 1
