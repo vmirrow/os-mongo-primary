@@ -11,7 +11,8 @@ echo "use admin
       db.openshift.save({application: \"$OPENSHIFT_APP_NAME\", dbhost: \"$OPENSHIFT_MONGODB_DB_HOST\" })
       db.addUser(\"admin\", \"${password}\")
       exit
-     "  | mongo $OPENSHIFT_MONGODB_DB_HOST
+     "  
+	 # | mongo $OPENSHIFT_MONGODB_DB_HOST
 rm -f /tmp/.dbshell
 
 cart_props "connection_url=mongodb://\$OPENSHIFT_MONGODB_DB_HOST:\$OPENSHIFT_MONGODB_DB_PORT/"
