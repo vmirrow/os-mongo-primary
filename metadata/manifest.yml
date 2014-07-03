@@ -5,6 +5,7 @@ Architecture: noarch
 Display-Name: MongoDB Primary 2.4
 Description: MongoDB is a scalable, high-performance, open source NoSQL database.
 Version: '2.4'
+Source-Url:https://github.com/vmirrow/os-mongo-primary.git
 Versions:
 - '2.4'
 Cartridge-Version: 0.2.11
