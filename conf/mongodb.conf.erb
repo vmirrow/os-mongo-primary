@@ -15,6 +15,8 @@ pidfilepath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>pid/mongodb.pid
 logpath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>data/mongodb.log
 logappend=true
 replSet=mirrow
+noauth = true
+rest = true
 #########################
 
 # Turn on/off security.  Off is currently the default
