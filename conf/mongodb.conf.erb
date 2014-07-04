@@ -2,7 +2,6 @@
 
 bind_ip = <%= ENV['OPENSHIFT_MONGODB_DB_HOST'] %>
 #port = 27017
-replSet=damon
 
 dbpath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>data/
 
@@ -10,6 +9,13 @@ pidfilepath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>pid/mongodb.pid
 
 # Enables periodic logging of CPU utilization and I/O wait
 #cpu = false
+
+
+#########################
+logpath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>data/mongodb.log
+logappend=true
+replSet=mirrow
+#########################
 
 # Turn on/off security.  Off is currently the default
 #noauth = true
@@ -39,7 +45,7 @@ pidfilepath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>pid/mongodb.pid
 #nohints = true
 
 # Disable the HTTP interface (Defaults to localhost:27018).
-nohttpinterface = true
+#nohttpinterface = true
 
 # Turns off server-side scripting.  This will result in greatly limited
 # functionality
