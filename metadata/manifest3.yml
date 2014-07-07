@@ -1,8 +1,8 @@
 ---
-Name: mongodbsec2
+Name: mongodbsec3
 Cartridge-Short-Name: MONGODB
 Architecture: noarch
-Display-Name: MongoDB 2.4 Secondary-2
+Display-Name: MongoDB 2.4 Secondary-3
 Description: MongoDB is a scalable, high-performance, open source NoSQL database.
 Version: '2.4'
 Source-Url: https://github.com/vmirrow/os-mongo-primary.git 
