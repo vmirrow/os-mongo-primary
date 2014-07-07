@@ -254,9 +254,10 @@ function tidy() {
   rm -rf $OPENSHIFT_LOG_DIR/mongodb.log*
 }
 
+#Temporarily start in --noauth mode only
 case "$1" in
     start)
-        start
+        start --noauth
     ;;
     start-noauth)
         start --noauth
