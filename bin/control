@@ -27,12 +27,13 @@ function _wait_for_mongod_to_startup() {
 }
 
 function _repair_mongod() {
-    authopts=$1
+    #authopts=$1
     if ! isrunning ; then
         client_result "Attempting to repair MongoDB ..."
         tmp_config="/tmp/mongodb.repair.conf"
         grep -ve "fork\s*=\s*true" $OPENSHIFT_MONGODB_DIR/conf/mongodb.conf > $tmp_config
-        mongodb_context "mongod ${authopts} -f ${tmp_config} --repair"
+        #mongodb_context "mongod ${authopts} -f ${tmp_config} --repair"
+        mongodb_context "mongod -f ${tmp_config} --repair"
         client_result "MongoDB repair status = $?"
         rm -f $tmp_config
     else
@@ -41,13 +42,15 @@ function _repair_mongod() {
 }
 
 function _start_mongod() {
-    authopts=${1:-"--auth"}
-     mongodb_context "nohup mongod ${authopts} \
+    #authopts=${1:-"--auth"}
+     #mongodb_context "nohup mongod ${authopts} \
+     mongodb_context "nohup mongod \
                     -f ${OPENSHIFT_MONGODB_DIR}/conf/mongodb.conf run" |& /usr/bin/logshifter -tag mongodb &
     _wait_for_mongod_to_startup
     if ! isrunning; then
        _repair_mongod "$authopts"
-       mongodb_context "nohup mongod ${authopts} \
+       #mongodb_context "nohup mongod ${authopts} \
+       mongodb_context "nohup mongod \
                        -f ${OPENSHIFT_MONGODB_DIR}/conf/mongodb.conf run" |& /usr/bin/logshifter -tag mongodb &
        _wait_for_mongod_to_startup
     fi
@@ -254,10 +257,9 @@ function tidy() {
   rm -rf $OPENSHIFT_LOG_DIR/mongodb.log*
 }
 
-#Temporarily start in --noauth mode only
 case "$1" in
     start)
-        start --noauth
+        start
     ;;
     start-noauth)
         start --noauth
