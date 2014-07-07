@@ -12,7 +12,7 @@ pidfilepath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>pid/mongodb.pid
 
 
 # Replication parameters
-#logpath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>data/mongodb.log
+logpath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>data/mongodb.log
 #logappend=true
 replSet=mirrow
 oplogSize=128
@@ -20,10 +20,10 @@ rest = true
 #
 
 # Turn on/off security.  Off is currently the default
-#noauth = true
+noauth = true
 
 # Verbose logging output.
-#verbose = true
+verbose = true
 
 # Inspect all client data for validity on receipt (useful for
 # developing drivers)
