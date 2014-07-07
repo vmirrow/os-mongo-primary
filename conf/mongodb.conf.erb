@@ -1,7 +1,7 @@
 # mongodb.conf
 
 bind_ip = <%= ENV['OPENSHIFT_MONGODB_DB_HOST'] %>
-port = 27018
+port = 27019
 
 dbpath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>data/
 
@@ -45,7 +45,7 @@ rest = true
 # Ignore query hints
 #nohints = true
 
-# Disable the HTTP interface (Defaults to localhost:27018).
+# Disable the HTTP interface.
 #nohttpinterface = true
 
 # Turns off server-side scripting.  This will result in greatly limited
