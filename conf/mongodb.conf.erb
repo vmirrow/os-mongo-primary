@@ -1,7 +1,7 @@
 # mongodb.conf
 
 bind_ip = <%= ENV['OPENSHIFT_MONGODB_DB_HOST'] %>
-port = 27019
+port = <%= ENV['OPENSHIFT_MONGODB_DB_PORT'] %>
 
 dbpath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>data/
 
@@ -11,12 +11,12 @@ pidfilepath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>pid/mongodb.pid
 #cpu = false
 
 
-#########################
-logpath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>data/mongodb.log
+# Replication parameters
+logpath=<%= ENV['OPENSHIFT_MONGODB_DIR'] %>logs/mongodb.log
 #logappend=true
 replSet=mirrow
 rest = true
-#########################
+#
 
 # Turn on/off security.  Off is currently the default
 #noauth = true
@@ -70,7 +70,7 @@ noprealloc = true
 # Ping interval for Mongo monitoring server.
 #mms-interval = <seconds>
 
-# Replication Options
+# !!Deprecated!! Replication Options
 # in replicated mongo databases, specify here whether this is a slave or master
 #slave = true
 #source = master.example.com
